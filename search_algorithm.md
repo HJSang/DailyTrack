@@ -21,4 +21,27 @@ For example, assume we have a sorted array *arr[]* of size n. Suppose that the s
 
 To understand the time complexity and the optimal step size, we can consider the worst case. Assume we first seach *m-1* elements to identify the interval and them apply *m/n* to get the matched element. Hence, the total time complexity is *O{m-1 + m/n}*. The optimal step size is *\sqrt{m}*.
 
+## Interpolation Search 
+Interpolation Search is a generalization of Binary Search.  Suppose that the arrays in a sorted array are uniformly distributed. Instead of middle index, we use the interpolation index to indicate the uniform distribution. That is the distance of indices are proportional to the distance of values in expectation. 
 
+* pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
+* arr[] ==> Array where elements need to be searched
+* x     ==> Element to be searched
+* lo    ==> Starting index in arr[]
+* hi    ==> Ending index in arr[]
+
+*Algorithm*: 
+Rest of the Interpolation algorithm is the same except the above partition logic.
+
+*Step1*: In a loop, calculate the value of “pos” using the probe position formula.
+*Step2*: If it is a match, return the index of the item, and exit.
+*Step3*: If the item is less than arr[pos], calculate the probe position of the left sub-array. Otherwise calculate the same in the right sub-array.
+*Step4*: Repeat until a match is found or the sub-array reduces to zero.
+
+## Exponential Search
+Exponential search involves two steps:
+* Find range where element is present
+* Do Binary Search in above found range.
+How to find the range where element may be present?
+The idea is to start with subarray size 1, compare its last element with x, then try size 2, then 4 and so on until last element of a subarray is not greater.
+Once we find an index i (after repeated doubling of i), we know that the element must be present between i/2 and i (Why i/2? because we could not find a greater value in previous iteration)
