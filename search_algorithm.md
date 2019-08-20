@@ -59,3 +59,7 @@ Search a linked list in another list:  Given two linked lists, to check if the f
 * And Take second list to its second node.
 * Repeat these steps until any of the linked lists becomes empty.
 * If the first list becomes empty then list found else not.
+
+## Fibonacci Search
+
+
