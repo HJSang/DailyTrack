@@ -42,6 +42,20 @@ Rest of the Interpolation algorithm is the same except the above partition logic
 Exponential search involves two steps:
 * Find range where element is present
 * Do Binary Search in above found range.
+
 How to find the range where element may be present?
+
 The idea is to start with subarray size 1, compare its last element with x, then try size 2, then 4 and so on until last element of a subarray is not greater.
 Once we find an index i (after repeated doubling of i), we know that the element must be present between i/2 and i (Why i/2? because we could not find a greater value in previous iteration)
+
+## Sublist Search 
+Search a linked list in another list:  Given two linked lists, to check if the first linked list is in the second linked list. 
+
+*Algorithm* :
+* Take the first node of the second linked list.
+* Start to macth the first node.
+* If the whole list is macthed return true.
+* Else if break and take first list to the first node again.
+* And Take second list to its second node.
+* Repeat these steps until any of the linked lists becomes empty.
+* If the first list becomes empty then list found else not.
