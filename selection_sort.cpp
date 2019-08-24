@@ -56,6 +56,7 @@ int main()
 	cout<<"After sorting:\n";
 	selection_sort(arr,n);
 	print_array(arr,n);
+	return 0;
 }
 
 

@@ -45,4 +45,5 @@ int main()
 	cout<<"After Sorting:"<<endl;
 	bubble_sorting(arr,n);
 	print_array(arr,n);
+	return 0;
 }
